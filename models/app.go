@@ -206,7 +206,7 @@ func (a *App) UpdateParams(changes map[string]string) error {
 }
 
 func (a *App) Formation() (string, error) {
-	data, err := exec.Command("docker", "run", fmt.Sprintf("convox/app:%s", os.Getenv("RELEASE")), "-mode", "staging").CombinedOutput()
+	data, err := exec.Command("docker", "run", fmt.Sprintf("redbadger/convox-app:%s", os.Getenv("RELEASE")), "-mode", "staging").CombinedOutput()
 
 	if err != nil {
 		return "", err
